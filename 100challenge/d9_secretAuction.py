@@ -1,7 +1,6 @@
 #d9_secret auction
 
 from os import system
-
 more_bidders = True
 bidders_list = {}
 
@@ -29,11 +28,7 @@ def top_bid():
             tb_name = bidder
     print(f"The winner is: {tb_name} who decided to bid: ${tb_value}")
 
-#    print("The winner is:", temp_bidder[-2], "with a bid of: $",temp_bidder[-1])
-            
-
 #in that loop we're asking for details of bid, bidder name, adding to dictionary and checking which one is biggest
-
 while more_bidders == True:
     print("Welcome to the secret auction program.")
     name = input("What is your name?: ").title()
@@ -43,5 +38,4 @@ while more_bidders == True:
     if bidders == "no":
         more_bidders = False
     system('cls')
-
 top_bid()
