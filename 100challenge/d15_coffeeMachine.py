@@ -76,15 +76,15 @@ def check_transaction(ClientPaid):
 
 def make_coffee(coffee):
     if coffee == "espresso":
-        print(f"Here's your {coffee}")
+        print(f"Here's your {coffee}☕")
         for resource in MENU[coffee]['ingredients']:
             resources[resource] = resources[resource] - MENU[coffee]['ingredients'][resource]
     elif coffee == "latte":
-        print(f"Here's your {coffee}")
+        print(f"Here's your {coffee}☕")
         for resource in MENU[coffee]['ingredients']:
             resources[resource] = resources[resource] - MENU[coffee]['ingredients'][resource]
     elif coffee == "cappuccino":
-        print(f"Here's your {coffee}") 
+        print(f"Here's your {coffee}☕") 
         for resource in MENU[coffee]['ingredients']:
             resources[resource] = resources[resource] - MENU[coffee]['ingredients'][resource]
     return resources
