@@ -34,7 +34,7 @@ print(connections)
 print(len(connections))
 
 connections2 = [(start, stop) for start in ports for stop in ports if start != stop]
-print(connections2)
+print(connections2) 
 print(len(connections2))
 
 connections2 = [(start, stop) for start in ports for stop in ports if start < stop]
