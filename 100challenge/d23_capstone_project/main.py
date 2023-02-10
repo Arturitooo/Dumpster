@@ -31,7 +31,7 @@ while game_is_on:
             game_is_on = False
             scoreboard.game_over()
 
-    if player.ycor()>= 280:
+    if player.ycor()>= 285:
         scoreboard.level_up()
         carmanager.level_up()
         time.sleep(0.5)
