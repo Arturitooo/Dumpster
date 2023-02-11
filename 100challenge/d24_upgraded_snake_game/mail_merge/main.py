@@ -9,6 +9,17 @@
 
 import os
 
+PLACEHOLDER = "[name]"
+
 with open(r"C:\Users\Art\Documents\GitHub\learning\100challenge\d24_upgraded_snake_game\mail_merge\input\invited_names.txt") as invited:
-    names = invited.read()
+    names = invited.readlines()
     print(names)
+
+with open(r"C:\Users\Art\Documents\GitHub\learning\100challenge\d24_upgraded_snake_game\mail_merge\input\starting_letter.txt",'r+') as letter:
+    letter_contents = letter.read()
+    for name in names:
+        stripped_name = name.strip()
+        new_letter = letter_contents.replace(PLACEHOLDER, stripped_name)
+        print(new_letter)
+        with open(f"C:\\Users\\Art\\Documents\\GitHub\\learning\\100challenge\\d24_upgraded_snake_game\\mail_merge\\output\\letter_for_{stripped_name}.txt",mode="w") as completed_letter:
+            completed_letter.write(new_letter)
