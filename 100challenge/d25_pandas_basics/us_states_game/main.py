@@ -11,7 +11,7 @@ screen.addshape(image)
 turtle.shape(image)
 t.penup()
 t.hideturtle()
-score = 49
+score = 0
 game_is_on = True
 
 all_states = states.state.to_list()
@@ -27,6 +27,12 @@ while game_is_on:
     else:
         pass
 
+    if answer_state == "Exit":
+        print("You didn't know all the states, that's why we prepared for you the 'learn_states.csv' so you can work on it")
+        data3 = pandas.DataFrame(all_states)
+        data3.to_csv(r"C:\Users\Art\Documents\GitHub\learning\100challenge\d25_pandas_basics\us_states_game\learn_states.csv")
+        break
+    
     if score == 50:
         t.goto(0,0)
         t.write("Congratulations, you know all the states!", True, align="center", font=("Arial", 18, "bold"))
