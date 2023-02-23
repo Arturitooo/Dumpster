@@ -1,0 +1,100 @@
+--------------------
+Function ChangeSalary started at 2023-02-23T20:27:01.568946
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:54:04.393207
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:54:28.300527
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:55:42.276364
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:56:03.148295
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:57:03.900943
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:58:20.824445
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:58:37.143527
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:58:43.084516
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:58:47.403894
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:58:47.517701
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:58:48.618126
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:58:50.979151
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:59:02.954575
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T20:59:17.602645
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T21:00:40.602899
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T21:00:44.340272
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T21:02:44.244907
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T21:02:58.854454
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T21:03:56.322049
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000

@@ -1,0 +1,5 @@
+--------------------
+Function ChangeSalary started at 2023-02-23T20:22:33.981531
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
