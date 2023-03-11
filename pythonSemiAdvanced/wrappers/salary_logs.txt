@@ -98,3 +98,8 @@ Function ChangeSalary started at 2023-02-23T21:03:56.322049
 Following parameters were used:Johnoson 20000 True
 
 Function returned: 20000
+--------------------
+Function ChangeSalary started at 2023-02-23T21:07:35.003991
+Following parameters were used:Johnoson 20000 True
+
+Function returned: 20000
