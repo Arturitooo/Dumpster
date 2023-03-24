@@ -26,6 +26,7 @@ except KeyError as error_key:
     print(f"There's no such a dictionary element as {error_key}")
 else:
     print("it all worked well")
+    
 finally:
 #    raise TypeError("My own error")
 #    file.close()
