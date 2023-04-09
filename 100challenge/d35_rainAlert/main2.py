@@ -13,3 +13,5 @@ response = requests.get(OWM_Endpoint, params = weather_params)
 
 print(response.status_code) #shows you what's the code of the response, for some rasons i receive 401 which means something is wrong with my authentication, successful request should provide 200 response code
 print(response.json())
+
+print("I wasnt able to finish the project since the API used in the course is not available anymore, I couldnt find similar one")
