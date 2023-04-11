@@ -82,7 +82,7 @@ if differencePercentage >= 5:
 
 
 #TODO 8. - Create a new list of the first 3 article's headline and description using list comprehension.
-    formatted_articles = [f"{STOCK_NAME} {up_down}{differenceRounded}%\n Headline: {article['title']}. \n\nBrief: {article['description']}" for article in three_articles]
+    formatted_articles = [f"{STOCK_NAME} {up_down}{differenceRounded}%\nHeadline: {article['title']}. \n\nBrief: {article['description']}" for article in three_articles]
 
 #TODO 9. - Send each article as a separate message via Twilio. 
     client = Client(TWILIO_SID, TWILIO_AUTH_TOKEN)
