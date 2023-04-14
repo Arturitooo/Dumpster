@@ -43,11 +43,15 @@ headers = {
     "X-USER-TOKEN":TOKEN
 }
 
-#esponse = requests.post(url=PIXELA_CREATE_ENDPOINT, json = user_pce_params)
+#creating pixela account
+#response = requests.post(url=PIXELA_CREATE_ENDPOINT, json = user_pce_params)
+#creating graph
 #response = requests.post(url = PIXELA_GRAPH_ENDPOINT, json = user_pge_params, headers= headers)
+#adding value to graph
 #response = requests.post(url = PIXELA_ADDVALUE_ENDPOINT, json = user_pave_params, headers=headers)
+#updating value to graph
 #response = requests.put(url = PIXELA_UPDATEVALUE_ENDPOINT, json = user_puve_params, headers = headers)
-
+#deleting value to graph
 response = requests.delete(url = PIXELA_UPDATEVALUE_ENDPOINT, headers=headers)
 
 print(response)
