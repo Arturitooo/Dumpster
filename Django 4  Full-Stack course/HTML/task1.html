@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>I love HTML5</h1>
+    <p>because it is cool!</p>
+    <ul>
+      <li>Salt</li>
+      <li>Pasta</li>
+      <ul>
+        <li>Spaghetti</li>
+      </ul>
+      <li>Tomatoes</li>
+      <li>Cheese</li>
+    </ul>
+
+    <form action="other.html">
+      <label for="fname">First name:</label>
+      <input
+        type="text"
+        id="fname"
+        name="fname"
+        placeholder="email goes here"
+      /><br />
+      <label for="lname"><span style="color: red">Last name:</span></label>
+      <input type="text" id="lname" /> <br />
+      <input type="submit" name="Submit" />
+      <!-- You go for name and id instead of id, because when you are redirected to the new page, 
+        the id's will be shown in URL and there might some sensitive data so be careful-->
+    </form>
+
+    <!--
+Other input types:
+type = radio - 1 or 2 - button for 1 or 2
+-->
+    <h1>Please fill the survey</h1>
+    <form action="other.html">
+      <p>Are you from Inside or Outside USA?</p>
+      <label for="in">Inside:</label>
+      <input type="radio" name="loc" id="in" value="out" /><br />
+      <label for="out">Outside:</label>
+      <input type="radio" name="loc" id="out" value="in" /><br />
+
+      <input type="submit" value="Submit" />
+      <!--
+    You add the same name to avoid user marking both possible options
+-->
+    </form>
+
+    <form action="other.html">
+      <p>How was your service?</p>
+      <select name="stars" id="">
+        <option value="Good">3</option>
+        <option value="Ok">2</option>
+        <option value="Bad">1</option>
+        <br />
+        <input type="submit" value="Submit" />
+      </select>
+    </form>
+
+    <form action="other.html">
+      <p>Tell us about your presence in our hotel</p>
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        placeholder="Put youy feedback here"
+      ></textarea>
+    </form>
+
+    <br />
+
+    <table border="10">
+      <thead>
+        <th>Tic</th>
+        <th>Tac</th>
+        <th>Toe</th>
+      </thead>
+
+      <tr>
+        <td>x</td>
+        <td>o</td>
+        <td>x</td>
+      </tr>
+
+      <tr>
+        <td>o</td>
+        <td>x</td>
+        <td>o</td>
+      </tr>
+
+      <tr>
+        <td>o</td>
+        <td>o</td>
+        <td>x</td>
+      </tr>
+    </table>
+
+    <a href="www.google.com"><img src="image.jpg" alt="Picture not found" /></a>
+  </body>
+</html>
