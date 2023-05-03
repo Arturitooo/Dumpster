@@ -1,0 +1,25 @@
+h1 {
+  color: blue;
+  font-weight: 900;
+}
+
+h2 {
+  color: aqua;
+  font-style: italic;
+  background-color: black;
+}
+
+body {
+  background-color: yellow;
+}
+
+div {
+  background-color: green;
+  border-color: orange;
+  border-width: 10px;
+  border-style: dashed;
+}
+
+span {
+  background-color: blue;
+}
