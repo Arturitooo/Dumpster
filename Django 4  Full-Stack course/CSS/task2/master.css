@@ -1,0 +1,10 @@
+.myclass {
+  background-color: red;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#central {
+  text-align: center;
+  border: 5px solid rgb(0, 128, 0);
+  margin: 50px 50px 50px 50px;
+}
