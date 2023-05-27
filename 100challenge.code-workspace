@@ -1,0 +1,17 @@
+{
+  "folders": [
+	{
+		"path": "100challenge"
+	}
+],
+  "settings": {
+    "[python]": {
+      "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "python.formatting.provider": "none"
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": []
+  }
+}

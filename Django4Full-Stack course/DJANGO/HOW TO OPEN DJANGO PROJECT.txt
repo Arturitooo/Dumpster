@@ -1,0 +1,13 @@
+1. Terminal -> New terminal
+2. Powershell -> cmd
+3. Go to location cd Projekt
+4. cls (clear screen)
+4a. python -m venv venv (local env)
+4b. venv\Scripts\activate
+4c. pip install django
+5. django-admin startproject my_site (creating project called my_site)
+6. cd my_site
+7. python manage.py startapp first_app
+
+#opening site
+python manage.py runserver
