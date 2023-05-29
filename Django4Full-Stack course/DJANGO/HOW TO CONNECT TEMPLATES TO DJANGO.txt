@@ -1,0 +1,11 @@
+1. Open new project "C:\Users\Art\Documents\GitHub\learning\Django4Full-Stack course\DJANGO\HOW TO OPEN DJANGO PROJECT.txt"
+2. Create new app_name
+3. map urls to the project -> 
+3.1. app views: def name_view(request): return render(request, 'html directory') // 
+3.2. app urls from django.urls import path from . import views urlpatterns = [path('', views.name_view)]
+3.3. project urls from django.urls import path, include, ++ path('app_name/, include('app_name.urls'))
+4. run python manage.py migrate
+5. add your app to "INSTALLED APPS" in settings.py: ++ "'app_name.apps.AppNameConfig" (app name + local apps.py + config function name)
+6. register the app and db by running: python manage.py makemigrations app_name
+7. run python manage.py migrate (to create model tables in db)
+8. create a template directory project/app_name/tampltes/app_name/example.html
