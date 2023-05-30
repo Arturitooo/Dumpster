@@ -8,5 +8,9 @@
   </head>
   <body>
     <h1>HELLO MY FRIEND!</h1>
+    <h1>
+      <a href="{% url 'my_app:variable' %}">Click me to go to variable</a>
+      {# Easy way to reference URL in django - using URL names #}
+    </h1>
   </body>
 </html>

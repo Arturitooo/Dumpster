@@ -7,6 +7,7 @@ def example_view(request):
 
 def variable_view(request):
 
-    my_var = {'first_name':'Rosaline', 'last_name':'Frank', 'some_list':[1,2,3], 'some_dict':{'inside_key':'inside_value'}}
+    
+    my_var = {'first_name':'Rosaline', 'last_name':'Frank', 'some_list':[1,2,3],'user_logged_in':True, 'some_dict':{'inside_key':'inside_value'}}
 
     return render(request, 'new_app/variable.html', context = my_var)
