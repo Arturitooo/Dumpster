@@ -8,7 +8,30 @@
   </head>
   <body>
     <h1>VARIABLE.HTML</h1>
-    <h2>Hello {{first_name}} {{last_name}}, it's very nice to see you</h2>
+
+    {% if user_logged_in %} {# Here's an example of if tag - if user_logged_in
+    equals True - you gonna see the content, if not - you won't #}
+    <h2>
+      Hello {{first_name | upper}} {{last_name | lower}}, it's very nice to see
+      you {# the |upper part is "filter" - built-in django templating modifier
+      #}
+    </h2>
+
+    <ul>
+      {% for k,v in some_dict.items %}
+      <li><p>{{k}}</p></li>
+      {% endfor %} {#We have tag here - not a variable#}
+    </ul>
+    <br />
+    <ul>
+      {% for item in some_list %} {% if item == 2 %}
+      <li>two</li>
+      {% else %}
+      <li><p>{{item}}</p></li>
+      {% endif %} {% endfor %}
+    </ul>
+    {#it allows you to do some logic actions within the html#} {% endif %}
+
     <h2>{{some_list.0}} {{some_dict.inside_key}}</h2>
     <h2>{# this is different way to put comments #}</h2>
     <!--some_list.0 - takes only first element from the list-->
