@@ -1,0 +1,10 @@
+{%extends "base.html"%} {%block content%}
+<div class="container">
+  <ul>
+    {%for car in all_cars%}
+    <li>{{car}}</li>
+    {% endfor %}
+  </ul>
+</div>
+<h1>LIST.HTML</h1>
+{%endblock%}
