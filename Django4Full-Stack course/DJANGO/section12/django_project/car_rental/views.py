@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import models  # we need to import models to get data from DB
 # Create your views here.
+from django.urls import reverse
 
 
 def list(request):
@@ -11,8 +12,25 @@ def list(request):
 
 
 def add(request):
-    return render(request, 'car_rental/add.html')
+    if request.POST:
+        # add the car
+        brand = request.POST['brand']
+        year = int(request.POST['year'])
+        models.Car.objects.create(brand=brand, year=year)
+        return redirect(reverse('car_rental:list'))
+    else:
+        return render(request, 'car_rental/add.html')
 
 
 def delete(request):
-    return render(request, 'car_rental/delete.html')
+    if request.POST:
+        # delete the car
+        pk = request.POST['pk']
+        try:
+            models.Car.objects.get(pk=pk).delete()
+            return redirect(reverse('car_rental:list'))
+        except:
+            print("pk not found")
+            return redirect(reverse('car_rental:list'))
+    else:
+        return render(request, 'car_rental/delete.html')
