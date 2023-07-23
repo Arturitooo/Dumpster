@@ -1,13 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Document</title>
-    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
-  </head>
+{% extends 'base.html' %}
+
   <body>
-    <h1>NEW VARIABLES</h1>
+    <br />
+
+    {% comment %} Inheritance - repetetive block of code {% endcomment %}
+    <h3>Inheritance - repetetive block:</h3>
+ 
+    {% block content %}
+      <h2>This is inside the block in new variables.html</h2>
+    {% endblock  %}
+
+
   </body>
 </html>
