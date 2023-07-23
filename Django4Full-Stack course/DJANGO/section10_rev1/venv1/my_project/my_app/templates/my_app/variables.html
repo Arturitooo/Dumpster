@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Variable Document</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <h1>VARIABLES.html</h1>
+
+    {% if user_logged_in %}
+    <h1>Welcome back, you're logged in</h1>
+    {% endif %}
+
+    <h2>
+      FILTER: {{first_name}} | upper is very famous in Poland, because of his
+      last name: {{last_name}} <br /><br />
+
+      TAGS: He was doing very good in schoold, his grades were mainly: <br />
+      <ul>
+        {% for item in some_list %} {% if item == 4 %}
+        <li>four</li>
+        {% else %}
+        <li>{{item}}</li>
+        {% endif %} {% endfor %}
+      </ul>
+
+      <ul>
+        {% for k,v in some_dict.items %}
+        <li>{{k}} - {{v}}</li>
+        {% endfor %}
+      </ul>
+    </h2>
+    <h3>{{some_dict.inside_key}}</h3>
+    FILTERS INFO {# this is single line comment, below you see multiline s#}
+    <br />
+    {% comment %}
+    <p>
+      Filters - django templates built-in (you can also create your own)
+      functions that transforms look by using them - for example: {name} shows:
+      Rosalind, but {name} | upper would show: ROSALIND
+    </p>
+    {% endcomment %} TAGS INFO {% comment %}
+    <p>Tags - additional logic provided during rendering process</p>
+    {% endcomment %}
+  </body>
+</html>
