@@ -22,3 +22,6 @@ urlpatterns = [
     path('my_app/', include('my_app.urls')),
 
 ]
+
+
+handler404 = 'my_project.views.custm_page_not_found_view'

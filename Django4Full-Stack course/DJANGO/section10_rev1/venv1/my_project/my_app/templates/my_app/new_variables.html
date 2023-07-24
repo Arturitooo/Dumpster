@@ -1,15 +1,13 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% load static %}
 
-  <body>
-    <br />
+<body>
+  <br />
 
-    {% comment %} Inheritance - repetetive block of code {% endcomment %}
-    <h3>Inheritance - repetetive block:</h3>
- 
-    {% block content %}
-      <h2>This is inside the block in new variables.html</h2>
-    {% endblock  %}
+  {% comment %} Inheritance - repetetive block of code {% endcomment %}
+  <h3>Inheritance - repetetive block:</h3>
 
-
-  </body>
-</html>
+  {% block content %}
+  <h2>This is inside the block in new variables.html</h2>
+  <img src="{% static 'my_app/photo.png' %}" alt="my image" />
+  {% endblock %}
+</body>
