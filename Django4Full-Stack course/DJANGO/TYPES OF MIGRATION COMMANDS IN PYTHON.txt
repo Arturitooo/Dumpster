@@ -1,3 +1,0 @@
-python manage.py makemigrations - creates python file as a set of instructions
-python manage.py sqlmigrate - you can check the instructions
-python manage.py migrate - to do the migration itself

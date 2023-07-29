@@ -1,0 +1,43 @@
+python manage.py makemigrations - creates python file as a set of instructions 4e.0001_initial.py
+python manage.py sqlmigrate - you can check the instructions you did
+python manage.py migrate - to do the migration (set of inctructions iside 00011_initial.py and the other) itself
+
+TO INTERACT WITH DB YOU NEED TO:
+1. Python manage.py shell
+2. Download models you're interested in: from app_name.models (4instance: office.models) import model_name (4instance: Patient)
+
+CRUD - C - CREATE:	
+1. Create object based on your model, 4e: carl = Patient(first_name="Carl", last_name="Smith", age=30) #check age using: carl.age or carl.age < 20 = False
+Create / save: carl.save() -- saving to database
+alternative: Patient.objects.create(first_name="Carl", last_name="Smith", age=30)
+2. BULK CREATE: my_list = [Patient(first_name...), Patient(first_name...)] 
+Patient.objects.bulk_create(my_list)
+
+
+CRUD - R - READ:
+1. Model_name.objects.all() or ...all()[0] - reading all results in this model (or sliced ones)
+if you want human-readable version of model instance - you need to create def __str__(self): return f"{first_name},{last.."
+2. .get() - gives us single result 4instance: Patient.objects.get(pk=1) - pk - primary key
+3. .filter().all() - gives more results matching: Patient.objects.filter(first_name="Carl").all() - provides 2,3 or more results
+.filter(...).filter(...).all() also works fine
+4. OPERATORS (AND OR SMALLER): from djang.db.models import Q -> Patient.objects.filter(Q(first_name=...) & Q(last_name=...)).all()
+& - meaning AND, | meaning OR
+5. FIELDS LOOKUPs (startswith, exact, less/greater than) - Model.objects.filter(name__startswith="some").all() or age__in=[20,30,40] meaning one of these in list
+
+CRUD - U - UPDATE:
+MODEL UPDATE
+1. When adding new field to models - you need to set some default value 4instance: heartrate = models.IntegerField(default=60)
+2. Python manage.py makemigrations model_name
+3. python manage.py migrate
+ENTRY UPDATE:
+1. First u need to get the data and save it as variable: user1 = Model_name.objects.get(identifier=...)
+2. then u change the value: user1.name = 'Artur'
+3. then u save it: user1.save()
+
+CRUD - D - DELETE:
+1. First u need to get the data and save it as variable: user1 = Model_name.objects.get(identifier=...)
+3. then u delete it: user1.delete()
+
+
+
+
