@@ -1,0 +1,14 @@
+1. On project level urls.py connect app level urls.py
+2. created urls.py app level and connected with views.py app level
+3. created views.py app level and took from BE some data, hand it over with context
+4. later we connected to .html file in application, to show the data to the user.
+
+1. Creating templates, views and models connection
+2. in views.py from . import models
+3. Get the data and share it through context: all_patients = models.Patient.objects.all() --> context_list = {'patients':all_patients}
+4. Function based view: return render(request, 'office/list.html', context=context_list) 
+5. adding {{patients}} to html (patients because that's how the list is identified in context_list
+
+
+
+
