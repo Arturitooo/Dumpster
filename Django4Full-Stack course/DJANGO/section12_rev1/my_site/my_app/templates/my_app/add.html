@@ -1,0 +1,21 @@
+{% extends 'base.html' %} {%block content%}
+<div class="container">
+  <h1>Add a new car to the db:</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <div>
+      <label for="brand">Brand:</label><br />
+      <input class="form-control" type="text" id="brand" name="brand" /><br />
+    </div>
+    <div>
+      <label for="year">Year:</label><br /><input
+        class="form-control"
+        type="text"
+        id="year"
+        name="year"
+      /><br />
+    </div>
+    <div><input class="btn btn-primary" type="submit" /></div>
+  </form>
+</div>
+{%endblock%}
