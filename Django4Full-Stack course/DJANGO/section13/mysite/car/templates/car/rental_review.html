@@ -1,0 +1,55 @@
+{% load static %}
+<!-- connecting custom css / image / js-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="{% static 'car/custom.css' %}" />
+    <!-- connecting custom css / image / js-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Website</title>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h1>Rental review!</h1>
+    <div class="container">
+      <!--<div class="container myform">-->
+      <!-- using custom css - myform-->
+      <form method="POST">
+        {% csrf_token %} 1
+        <p>{{form.first_name.label_tag}}{{form.first_name}}</p>
+        <p>{{form.last_name.label_tag}}{{form.last_name}}</p>
+        <p>{{form.email.label_tag}}{{form.email}}</p>
+        <p>{{form.review.label_tag}}<br />{{form.review}}</p>
+        <input type="submit" />
+        {{field.errors}}
+      </form>
+      <br /><br />
+      2
+      <form method="POST">
+        {% csrf_token %} {{form.as_p}} <br /><br /><input type="submit" />
+        {{field.errors}}
+      </form>
+
+      3
+      <form method="POST">
+        {% csrf_token %} {% for field in form %}
+        <div class="mb-3">{{field.label_tag}}</div>
+        {{field}} {% endfor %}
+        <input type="submit" />
+      </form>
+    </div>
+  </body>
+</html>
