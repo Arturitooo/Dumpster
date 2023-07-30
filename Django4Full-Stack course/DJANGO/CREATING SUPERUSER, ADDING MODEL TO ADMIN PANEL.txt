@@ -1,0 +1,12 @@
+CREATING SUPERUSER
+* env turned off
+
+1. Cmd line: Python manage.py createsuperuser
+2. Provide username, email and password (twice)
+
+
+ADDING MODEL TO ADMIN PANEL
+
+1. Open app-level admin.py
+2. from app_name.models import Model_name
+3. Below: admin.site.register(Model_name)
