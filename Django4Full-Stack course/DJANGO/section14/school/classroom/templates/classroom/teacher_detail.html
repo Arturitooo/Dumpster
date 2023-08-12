@@ -1,0 +1,11 @@
+<h1>Detail teacher view</h1>
+
+{{teacher.pk}} - {{teacher.first_name}} {{teacher.last_name}} - subject:
+{{teacher.subject}} <br />
+<a href="/classroom/update_teacher/{{teacher.id}}"
+  >Update the teacher information</a
+>
+
+<a href="/classroom/delete_teacher/{{teacher.id}}">Delete the teacher</a><br />
+
+<a href="/classroom/">GO HOME</a>

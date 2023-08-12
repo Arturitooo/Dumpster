@@ -1,0 +1,66 @@
+TEMPLATE VIEW
+Type of view where you're connecting your model to html file and can get some data from context
+HOW TO:
+1. Create template in app
+2. views.py -> from django.views.generic import TemplateView
+3. class NameView(TemplateView): template_name = 'app_name/html_name.html'
+4. add to urls.py -> path('' or 'home', NameView.as_view(), name='view_name')
+
+
+FORM VIEW
+Type of view that you can creates forms in it, such as "Contact form"
+HOW TO:
+1.In the app create forms.py
+2. from django import forms
+3. class NameForm(forms.Form): name=forms.charField()
+4. in views from django.views.generic import FormView and from appname.forms import NameForm
+5. class nameFormView(Formview): form_class = NameForm
+6. create html and add <form method="POST"> {% csrf_token %} {{form.as_p}} <input type="submit" value="Submit"> </form>
+7. views.py -> template_name = 'app_name/html_file.html' and success_url = "app_name/redirection_url"
+8. views.py - define what to do with form -> def form_valid(self, form): 4example: print(form.cleaned_data) or form.save()
+
+MODEL BASED VIEWS!!!
+Remember about naming consistency pattern - If you have 'Teacher' model, then you create TeacherCreateView or Teacher_form
+ 
+CREATEVIEW
+Type of view that allows easily create instances of models, based on model
+HOW TO:
+1. views -> from django.views.generic import CreateView
+2. views -> from app_name.models import ModelName
+3. class model_nameCreateView(CreateView): model = model_name fields = ['name','age' etc] or fields = "__all__"
+4. success_url = reverse_url('app_name/site_name')
+5. after submitting it automatically saves to database so you have to makemigrations and migrate before go for it
+
+LISTVIEW 
+Type of view to easily serve all instances data from specific model
+HOW TO:
+1. views -> from django.views.generic import ListView
+2. views -> from app_name.models import ModelName
+3. class model_nameListView(ListView): model = model_name context_object_name = "data_name_list" //last part - allows you to easily recognise later what data you're using here
+4. create html: Model_name_list.html
+5. link to urls: path('model_name_list/',Model_nameListView.as_view(), name = 'model_name_list')
+6* You can reorganize your query using queryset = model_name.objects... (4example: order_by('pk')
+
+
+DETAILVIEW
+Type of view where you can get more specific data from the listview. (serves data only for one/specific record)
+HOW TO:
+1. import DetailView, class ModelNameDetailView(DetailView): model = Model_name
+2. creating model_name_detail.html
+3. connecting url in unique way: path('.../<int:pk>', Model_nameDetailView.as_view(), name="model_details")
+
+
+UPDATEVIEW
+Type of view to easily update your specific record in database
+HOW TO:
+* it uses created before model_form.html
+1. import DetailView, model = model_name, fields = "__all__" or fields = [...]
+2. success_url
+3. connect url in the way just like DetailView
+
+DELETEVIEW
+Type of view that allows to easily delete records from database
+1. import DetailView, model = model_name, fields = "__all__" or fields = [...]
+2. success_url
+3. connect url in the way just like DetailView
+4. create html - ModelName_confirm_delete.html with submit form
