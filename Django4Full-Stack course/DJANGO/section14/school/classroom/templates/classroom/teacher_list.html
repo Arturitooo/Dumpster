@@ -1,0 +1,13 @@
+<h1>List teachers form</h1>
+<ul>
+  {% for teacher in teachers_list %}
+  <li>
+    <a href="/classroom/teacher_detail/{{teacher.id}}"
+      >{{teacher.first_name}} {{teacher.last_name}} - {{teacher.subject}}</a
+    >
+  </li>
+  {% endfor %}
+</ul>
+
+<br />
+<a href="/classroom/">GO HOME</a>
