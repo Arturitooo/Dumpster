@@ -1,0 +1,35 @@
+py -m venv venv
+venv\Scripts\activate
+pip install django
+django-admin stratproject core .
+pip freeze > requirements.txt (creation of requirements.txt)
+add  djangorestframework==3.14.0 in the requirements txt 
+Create Dockerfile
+
+put there:
+------
+FROM python:3.8-slim-buster
+
+WORKDIR /app
+
+COPY requirements.txt requirements.txt
+
+RUN pip3 install -r requirements.txt
+
+COPY . .
+
+CMD ["python3", "manage.py", "runserver", "0.0.0.0:8000"]
+------
+
+create .dockerignore file
+put there; */venv
+
+
+// INSTAL DESKTOP VERSION OF DOCKER
+
+TERMINAL:
+docker build --tag project-name . (you can see image created in docker)
+docker run --publish 8000:8000 project-name (creates docker container)
+
+NOW YOU HAVE DOCKERIZED PROJECT
+
