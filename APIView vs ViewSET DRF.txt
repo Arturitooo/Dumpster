@@ -15,3 +15,16 @@ HTTP post - Create an item
 HTTP put - update an item
 HTTP patch - partiually update an item
 HTTP delete - deletes item
+
+VIEWSETS
+- Allows us to write API endpoints logic
+- Takes care a lot of typical logic for you (adds API to the root file)
+- Perfect for standard database operations
+- Fastest way to make database interface
+
+WHEN TO USE:
+- Simple CRUD interface to database
+- Quick and simple API to manage predefined components
+
+
+list / create / retrieve / update / partial_update / destroy
