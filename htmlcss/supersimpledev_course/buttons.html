@@ -10,11 +10,24 @@
             background-color: rgb(200, 0, 0);
             color: white;
             border: none;
-            height: 36px;
-            width: 105px;
             border-radius: 2px;
             cursor: pointer;
             margin-right: 8px;
+            margin-left: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 16px;
+            padding-right: 16px;
+            transition: opacity 0.15s;
+            vertical-align: top;
+        }
+
+        .subscribe-button:hover {
+            opacity: 0.8;
+        }
+
+        .subscribe-button:active {
+            opacity: 0.5;
         }
 
         .join-button {
@@ -24,10 +37,22 @@
             border-style: solid;
             border-width: 1px;
             border-radius: 2px;
-            height: 36px;
-            width: 62px;
             cursor: pointer;
-            margin-right: 8px;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            padding-left: 16px;
+            padding-right: 16px;
+            transition: background-color 0.15s, color 0.15s;
+            vertical-align: top;
+        }
+
+        .join-button:hover {
+            background-color: rgb(41, 118, 211);
+            color: white;
+        }
+
+        .join-button:active {
+            opacity: 0.7;
         }
 
         .tweet-button {
@@ -39,9 +64,17 @@
             margin-right: 8px;
             border: none;
             border-radius: 18px;
-            height: 36px;
-            width: 70px;
             cursor: pointer;
+            padding-top: 9px;
+            padding-bottom: 9px;
+            padding-left: 16px;
+            padding-right: 16px;
+            transition: box-shadow 0.15s;
+            vertical-align: top;
+        }
+
+        .tweet-button:hover {
+            box-shadow: 5px 5px 10px rgba(2, 137, 255, 0.15);
         }
 
     </style>
