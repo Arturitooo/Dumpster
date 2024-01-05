@@ -7,8 +7,8 @@
 }
 
 .left-section {
-    background-color: brown;
-    width: 150px;
+    display: flex;
+    align-items: center;
 }
 
 .mid-section {
@@ -17,9 +17,47 @@
     max-width: 500px;
     margin-left: 70px;
     margin-right: 35px;
+    display: flex;
+    align-items: center;
 }
 
 .right-section {
     background-color: chocolate;
     width: 200px;
+    
+}
+
+.hamburger-menu {
+    height: 22px;
+    margin-left: 24px;
+    margin-right: 20px;
+    margin-bottom: 8px;
+    vertical-align: middle;
+}
+
+.youtube-logo {
+    height: 38px;
+    margin-bottom: 8px;
+    vertical-align: middle;
+}
+
+.youtube-text {
+    height: 38px;
+    font-size: 25px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 55px; /* Set line-height to match the height of the header */
+    display: inline-block;
+    vertical-align: middle; /* Align vertically to the middle */
+}
+
+.search-button{
+    height: 40px;
+    width: 60px;
+
+}
+
+.voice-search-button {
+    height: 40px;
+    width: 40px;
 }

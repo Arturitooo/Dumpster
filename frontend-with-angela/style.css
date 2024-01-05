@@ -1,0 +1,172 @@
+body {
+    margin: 0;
+    background-color: rgb(245,247,249);
+    display: flex;
+    height: 100vh;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.non-visible-yet{
+    display: none;
+}
+
+.sidebar,
+.main {
+    height: 100%;
+}
+
+.sidebar {
+    width: 235px;
+    padding: 13px;
+    background-color: rgb(29,33,47);
+}
+
+.sb-logo{
+    width: 140px;
+    height: 45px;
+    object-fit: cover;
+}
+
+.sb-menu{
+    margin-left: 4px;
+    margin-right: 4px;
+    width: 225px;
+}
+
+.choose-project{
+    position: relative;
+    background-color: rgb(29,33,47);
+    margin-top: 15px;
+    height: 100%;
+    padding: 16px;
+    border: 1px solid rgba(199,203,219, .15);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.choose-project:before {
+    position: absolute;
+    content: "Project";
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.2);
+    top: 1px;
+}
+
+.choose-project:hover:before{
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.choose-project:hover{
+    border: 1px solid rgba(199,203,219, .4);
+}
+
+.dropbtn {
+    position: relative;
+    top: 3px;
+    height: 100%;
+    background-color: rgba(29,33,47, 1);
+    color: rgba(255, 255, 255, 1);
+    font-size: 16px;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+  }
+
+#dropdown-icon{
+    opacity: 0.5;
+}
+
+.choose-project:hover #dropdown-icon {
+    opacity: 1;
+}
+
+.dropdown-content {
+    background-color: rgba(29,33,47, 1);
+    display: none;
+    position: absolute;
+    padding-left: 0px;
+    margin-top: 15px;
+    padding-top: 3px;
+    width: 90%;
+    z-index: 1;
+  }
+
+.dropdown-content a {
+    color: rgba(255, 255, 255, 0.75);
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    display: block;
+  }
+  
+.dropdown-content a:hover {
+    background-color: rgba(4,81,229, .25);
+}
+  
+.choose-project:hover .dropdown-content {
+    display: block;
+}
+
+.menu-items{
+    color:white;
+}
+
+.menu-items-list{
+    padding: 0px;
+}
+
+.menu-item{
+    padding-left: 25px;
+    list-style: none;
+    font-size: 14px;
+    font-weight: 300;
+    margin-top: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    opacity: 0.7e5;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 25px;
+}
+
+.menu-item:hover{
+    border-radius: 5px;
+    opacity: 1;
+    background-color: rgba(4,81,229,0.5);
+    cursor: pointer;
+}
+
+
+.submenu-items{
+    margin-left: 20px;
+    padding-left: 10px;
+    list-style: none;
+    padding-left: 10px;
+}
+
+.submenu-item{
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.6;
+    margin: 0px;
+    padding: 5px 5px;
+}
+
+.submenu-item-icon{
+    position: relative;
+    top: -5px;
+    width: 13px;
+    height: auto;
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+.submenu-item:hover{
+    border-radius: 5px;
+    opacity: 1;
+    margin-right: 20px;
+    cursor: pointer;
+}
