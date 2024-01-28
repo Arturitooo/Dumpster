@@ -3,10 +3,13 @@ There are 2 ways of doing IT:
 1. CRA (Create React App)
 2. Vite 
 
+npx create-react-app appname
+npm start
+
 0. cmd
 0a. npm init
 0b. npm install
-1. create-vite@4.1.0
+1. npm create-vite@4.1.0
 2. y
 3. project name
 4. React -> Typescript
