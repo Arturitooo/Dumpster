@@ -44,6 +44,10 @@
 }
 
 .photo img {
-  max-height: 800px;
+  max-height: 750px;
   object-fit: cover;
+}
+
+.timer {
+  margin: 20px;
 }

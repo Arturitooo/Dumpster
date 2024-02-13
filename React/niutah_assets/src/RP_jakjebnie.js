@@ -12,16 +12,11 @@ const RandomPhoto = ({ photos }) => {
   const [shownPhotos, setShownPhotos] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(null);
   const [secondsPerPhoto, setSecondsPerPhoto] = useState('');
-  const [defaultSecondsPerPhoto, setDefaultSecondsPerPhoto] = useState('');
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [timeLeft, setTimeLeft] = useState(null);
   const [previousIndices, setPreviousIndices] = useState([]);
   const [isRunning, setIsRunning] = useState(true); // Default to true
   const [customTime, setCustomTime] = useState('');
-
-  useEffect(() => {
-    setDefaultSecondsPerPhoto(secondsPerPhoto);
-  }, [secondsPerPhoto]);
 
   useEffect(() => {
     let intervalId;
@@ -83,9 +78,9 @@ const RandomPhoto = ({ photos }) => {
       const prevIndex = previousIndices[previousIndices.length - 2];
       setPreviousIndices(prevIndices => prevIndices.slice(0, -1));
       setCurrentIndex(prevIndex);
-      setSecondsPerPhoto(defaultSecondsPerPhoto); // Reset the timer to default
+      setTimeLeft(parseFloat(secondsPerPhoto) * 60); // Reset the timer to default
     }
-  }, [previousIndices, defaultSecondsPerPhoto]);
+  }, [previousIndices, secondsPerPhoto]);
 
   const handleToggleTimer = () => {
     setIsRunning(prevIsRunning => !prevIsRunning);
@@ -130,7 +125,7 @@ const RandomPhoto = ({ photos }) => {
   };
 
   return (
-    <div className='photo' style={{ position: 'relative' }}>
+    <div className='photo'>
       <h2>Niutah Assets</h2>
       {!formSubmitted && (
         <form onSubmit={handleSubmit}>
@@ -167,17 +162,14 @@ const RandomPhoto = ({ photos }) => {
         <div>
           {photos.length > 0 && (
             <>
-              <div className='timer' style={{ position: 'absolute', top: 0, right: 0 }}>
-                <h3>Time left: {Math.floor(timeLeft / 60)}:{timeLeft % 60 < 10 ? `0${timeLeft % 60}` : timeLeft % 60} min</h3>
-              </div>
+              <div className='timer'>Time left: {Math.floor(timeLeft / 60)}:{timeLeft % 60 < 10 ? `0${timeLeft % 60}` : timeLeft % 60} min</div>
               {timeLeft !== null && (
                 <img src={photos[currentIndex].path} alt={photos[currentIndex].name} />
               )}
               <div>
-                <br/>
-                <button onClick={handlePrevious}>PREVIOUS</button> &nbsp;
-                <button onClick={handleToggleTimer}>{isRunning ? 'STOP' : 'START'}</button> &nbsp; 
-                <button onClick={handleNext}>NEXT</button>
+                <button onClick={handlePrevious}>Previous</button> &nbsp;
+                <button onClick={handleToggleTimer}>{isRunning ? 'STOP' : 'START'}</button> 
+                <button onClick={handleNext}>Next</button>
               </div>
             </>
           )}

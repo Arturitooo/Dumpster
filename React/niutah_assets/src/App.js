@@ -10,10 +10,10 @@ function App() {
       const imageContext = require.context('./assets', false, /\.(jpg|jpeg|png)$/);
       const imagePaths = imageContext.keys().map(imageContext);
       const imageObjects = imagePaths.map((path, index) => ({ name: `Image ${index + 1}`, path }));
-      setImages(imageObjects);
+      setImages(imageObjects); // Update images state with all images found in the assets folder
     };
     importImages();
-  }, []);
+  }, []); // Empty dependency array ensures useEffect runs only once, on component mount
 
   return (
     <div className="App">
