@@ -1,0 +1,9 @@
+.predefined-times {
+    display: flex;
+    text-align: center;
+  }
+  
+  .predefined-times > div {
+    margin-right: 20px; /* Adjust spacing between options */
+  }
+  
