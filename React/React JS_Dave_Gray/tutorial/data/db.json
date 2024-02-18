@@ -1,29 +1,29 @@
 {
-    "items":[
-        {
-            "id": 1,
-            "checked": false,
-            "item": "Potato"
-        },
-        {
-            "id": 2,
-            "checked": false,
-            "item": "Pizza"
-        },
-        {
-            "id": 3,
-            "checked": false,
-            "item": "Tomato"
-        },
-        {
-            "id": 4,
-            "checked": false,
-            "item": "Plate"
-        },
-        {
-            "id": 5,
-            "checked": false,
-            "item": "Watermelon"
-        }
-    ]
+  "items": [
+    {
+      "id": "1",
+      "checked": false,
+      "item": "Potato"
+    },
+    {
+      "id": "2",
+      "checked": false,
+      "item": "Pizza"
+    },
+    {
+      "id": "3",
+      "checked": false,
+      "item": "Tomato"
+    },
+    {
+      "id": "4",
+      "checked": false,
+      "item": "Plate"
+    },
+    {
+      "id": "5",
+      "checked": false,
+      "item": "Watermelon"
+    }
+  ]
 }
