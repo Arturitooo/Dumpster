@@ -10,10 +10,10 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 
-export function InitialForm({ setTimePerPhoto }) {
+export function InitialForm({ setTimePerPhoto, setSelectedRoot }) {
   const [timePerPhotoInput, setTimePerPhotoInput] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
-  const [selectedRoot, setSelectedRoot] = useState('');
+  const [selectedRootValue, setSelectedRootValue] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,10 +31,11 @@ export function InitialForm({ setTimePerPhoto }) {
     }
     setTimePerPhoto(timeInSeconds);
     setTimePerPhotoInput(timeInSeconds); // Update the input field value to reflect the time entered
+    setSelectedRoot(selectedRootValue); // Update the selected root directory
   };
 
   const handleRootChange = (event) => {
-    setSelectedRoot(event.target.value);
+    setSelectedRootValue(event.target.value);
   };
 
   return (
@@ -86,11 +87,13 @@ export function InitialForm({ setTimePerPhoto }) {
             <Select
               labelId="root-select-label"
               id="root-select"
-              value={selectedRoot}
+              value={selectedRootValue}
               label="Root Directory"
               onChange={handleRootChange}
             >
-              <MenuItem value="folder1">Folder 1</MenuItem>
+              <MenuItem value="">Main</MenuItem>
+              <MenuItem value="folder1">Folder 1</MenuItem> 
+              {/* If you want to change folder names - you need to do that here and in RandomImage.js - these are hard coded */}
               <MenuItem value="folder2">Folder 2</MenuItem>
               <MenuItem value="folder3">Folder 3</MenuItem>
             </Select>
