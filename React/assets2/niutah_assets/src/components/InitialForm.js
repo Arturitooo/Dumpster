@@ -10,7 +10,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import InputLabel from '@mui/material/InputLabel';
 
-export function InitialForm({ setTimePerPhoto, setSelectedRoot }) {
+export function InitialForm({ setTimePerPhoto, setSelectedRoot, setShowForm }) {
   const [timePerPhotoInput, setTimePerPhotoInput] = useState('');
   const [selectedTime, setSelectedTime] = useState('');
   const [selectedRootValue, setSelectedRootValue] = useState('');
@@ -79,7 +79,6 @@ export function InitialForm({ setTimePerPhoto, setSelectedRoot }) {
               value={timePerPhotoInput} // Display the current value entered by the user
               onChange={(e) => setTimePerPhotoInput(e.target.value)} // Update the input field value
             />
-            
           </Box>
 
           <FormControl style={{ width:'25ch', marginBottom: '10px' }} >
@@ -91,14 +90,12 @@ export function InitialForm({ setTimePerPhoto, setSelectedRoot }) {
               label="Root Directory"
               onChange={handleRootChange}
             >
-              <MenuItem value="">Main</MenuItem>
+              <MenuItem value="Default">Default</MenuItem>
               <MenuItem value="folder1">Folder 1</MenuItem> 
-              {/* If you want to change folder names - you need to do that here and in RandomImage.js - these are hard coded */}
               <MenuItem value="folder2">Folder 2</MenuItem>
               <MenuItem value="folder3">Folder 3</MenuItem>
             </Select>
           </FormControl><br/>
-
 
           <Button variant="contained" type="submit" style={{margin:"5px"}}>Submit</Button>
         </form>
