@@ -1,4 +1,4 @@
-import {React, useEffect} from 'react'
+import {React, useEffect, useState} from 'react'
 import {useForm} from 'react-hook-form'
 import {Box, Button, Typography} from '@mui/material'
 import {MyDatePickerField} from './forms/MyDatePickerField'
@@ -11,6 +11,17 @@ import {useNavigate, useParams} from 'react-router-dom'
 
 
 export const Edit = () => {
+
+  const [projectmanager, setProjectmanager] = useState()
+  const [loading, setLoading] = useState(true)
+
+  const hardcoded_options = [
+    {id:'', name:'None'}, 
+    {id:'Open', name:'Open'}, 
+    {id:'In progress', name:'In progress'}, 
+    {id:'Completed', name:'Completed'}, 
+  ]
+
   const MyParam = useParams()
   const MyId = MyParam.id
   const navigate = useNavigate()
@@ -27,9 +38,16 @@ export const Edit = () => {
       console.log(res.data)
       setValue('name',res.data.name)
       setValue('status',res.data.status)
+      setValue('projectmanager',res.data.projectmanager)
       setValue('comments',res.data.comments)
       setValue('start_date',Dayjs(res.data.start_date))
       setValue('end_date',Dayjs(res.data.end_date))
+    })
+
+    AxiosInstance.get(`projectmanager/`).then((res) => {
+      setProjectmanager(res.data)
+      console.log(res.data)
+      setLoading(false)
     })
   }
 
@@ -45,6 +63,7 @@ export const Edit = () => {
 
     AxiosInstance.put(`project/${MyId}/`,{
       name: data.name,
+      projectmanager: data.projectmanager,
       status: data.status,
       comments: data.comments,
       start_date: StartDate,
@@ -55,15 +74,11 @@ export const Edit = () => {
     })
   }
 
-  const hardcoded_options = [
-    {id:'', name:'None'}, 
-    {id:'Open', name:'Open'}, 
-    {id:'In progress', name:'In progress'}, 
-    {id:'Completed', name:'Completed'}, 
-  ]
 
   return (
     <div>
+      { 
+      loading ? <p>Loading data...</p> : 
       <form onSubmit={handleSubmit(submission)}>
       <Box sx={{display: 'flex', width:'100%', backgroundColor:'#00003f', marginBottom:'10px'}}>
         <Typography sx={{marginLeft:'20px', color:'#fff'}}>
@@ -112,15 +127,26 @@ export const Edit = () => {
             width={'30%'}
             options = {hardcoded_options}
           />
-          <Box sx={{width:'30%'}}>
-            <Button variant="contained" type="submit" sx={{width:"100%"}}>
-              Submit
-            </Button>
-          </Box>
+
+          <MySelectField 
+            label='Project manager'
+            name='projectmanager'
+            control={control}
+            width={'30%'}
+            options = {projectmanager}
+          />
 
         </Box>
+
+        <Box sx={{display: 'flex', justifyContent:"start", marginTop:'40px'}}>
+          <Button variant="contained" type="submit" sx={{width:"30%"}}>
+            Submit
+          </Button>
+        </Box>
+
       </Box>
       </form>
+      }
 
     </div>
   )

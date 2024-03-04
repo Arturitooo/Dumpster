@@ -1,4 +1,4 @@
-import {React} from 'react'
+import {React, useEffect, useState} from 'react'
 import {useForm} from 'react-hook-form'
 import {Box, Button, Typography} from '@mui/material'
 import {MyDatePickerField} from './forms/MyDatePickerField'
@@ -13,6 +13,21 @@ import * as yup from "yup"
 
 export const Create = () => {
 
+  const [projectmanager, setProjectmanager] = useState()
+  const [loading, setLoading] = useState(true)
+
+  const GetData = () => {
+    AxiosInstance.get(`projectmanager/`).then((res) => {
+      setProjectmanager(res.data)
+      console.log(res.data)
+      setLoading(false)
+    })
+  }
+
+  useEffect(() => {
+    GetData();
+  },[] )
+
   const navigate = useNavigate()
 
   const defaultValues = {
@@ -26,6 +41,7 @@ export const Create = () => {
   const schema = yup
   .object({
     name: yup.string().required("Name is required field"),
+    projectmanager: yup.string().required("Name is required field"),
     status: yup.string().required("Status is required field"),
     comments: yup.string(),
     start_date: yup.date().required("Start Date is required field"),
@@ -40,6 +56,7 @@ export const Create = () => {
 
     AxiosInstance.post(`project/`,{
       name: data.name,
+      projectmanager: data.projectmanager,
       status: data.status,
       comments: data.comments,
       start_date: StartDate,
@@ -59,6 +76,8 @@ export const Create = () => {
 
   return (
     <div>
+      { 
+      loading ? <p>Loading data...</p> : 
       <form onSubmit={handleSubmit(submission)}>
       <Box sx={{display: 'flex', width:'100%', backgroundColor:'#00003f', marginBottom:'10px'}}>
         <Typography sx={{marginLeft:'20px', color:'#fff'}}>
@@ -107,16 +126,24 @@ export const Create = () => {
             width={'30%'}
             options = {hardcoded_options}
           />
-          <Box sx={{width:'30%'}}>
-            <Button variant="contained" type="submit" sx={{width:"100%"}}>
-              Submit
-            </Button>
-          </Box>
+          <MySelectField 
+            label='Project manager'
+            name='projectmanager'
+            control={control}
+            width={'30%'}
+            options = {projectmanager}
+          />
 
+        </Box>
+        <Box sx={{display: 'flex', justifyContent:"start", marginTop:'40px'}}>
+          <Button variant="contained" type="submit" sx={{width:"30%", margin: "15px"}}>
+            Submit
+          </Button>
         </Box>
       </Box>
       </form>
 
+    }
     </div>
   )
 }
