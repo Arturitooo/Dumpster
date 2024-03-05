@@ -1,9 +1,20 @@
 from rest_framework import viewsets, permissions
 from rest_framework.response import Response
-from .models import Project
-from .serializers import ProjectSerializer
+from .models import Project, ProjectManager
+from .serializers import ProjectSerializer, ProjectManagerSerializer
 
 # Create your views here.
+
+
+class ProjectManagerViewset(viewsets.ViewSet):
+    permission_classes = [permissions.AllowAny]
+    queryset = ProjectManager.objects.all()
+    serializer_class = ProjectManagerSerializer
+
+    def list(self, request):
+        queryset = ProjectManager.objects.all()
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)
 
 
 class ProjectViewset(viewsets.ViewSet):
@@ -12,7 +23,7 @@ class ProjectViewset(viewsets.ViewSet):
     serializer_class = ProjectSerializer
 
     def list(self, request):
-        queryset = self.queryset
+        queryset = self.queryset.all()
         serializer = self.serializer_class(queryset, many=True)
         return Response(serializer.data)
 
