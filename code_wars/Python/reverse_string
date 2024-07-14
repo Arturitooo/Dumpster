@@ -1,0 +1,8 @@
+def solution(string):
+    reversed_string = ""
+    for i in range(0, len(string)):
+        reversed_string += string[-i]
+    return reversed_string
+
+
+solution("hello")
